@@ -1,7 +1,6 @@
-const users = require("../constants/users");
-const Users = require("../models/User");
-const bcrypt = require("bcrypt");
-var jwt = require('jsonwebtoken');
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+import Users from "../models/User.js";
 
 const login = async (req, res) => {
   const user = await Users.find({ email: req.body.email });
@@ -21,4 +20,4 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = login;
+export default login;

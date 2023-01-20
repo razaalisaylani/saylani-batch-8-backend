@@ -1,7 +1,9 @@
-const Users = require("../models/User");
+import Users from "../models/User.js"
+import config from "../constants/config.js";
 
 const getUsers = async (req, res) => {
   try {
+    console.log("config", config)
     const { id } = req.query;
     console.log("id", id)
     const users = await Users.find({});
@@ -11,4 +13,4 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = getUsers;
+export default getUsers;

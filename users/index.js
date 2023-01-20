@@ -1,5 +1,11 @@
-const express = require("express");
-var jwt = require('jsonwebtoken');
+import express from "express";
+import jwt from "jsonwebtoken";
+import get_users from "./get_users.js";
+import add_users from "./add_users.js";
+import login from "./login.js";
+import deleteUsers from "./delete_users.js";
+import uploadFiles from "./upload_files.js";
+
 
 const router = express.Router();
 
@@ -18,9 +24,10 @@ const verifyToken = (req, res, next) => {
     }
 }
 
-router.get("/", verifyToken, require("./get_users"));
-router.post("/", require("./add_users"));
-router.post("/login", require("./login"));
-router.delete("/:id", require("./delete_users"));
+router.post("/upload/files", uploadFiles);
+router.get("/", verifyToken, get_users);
+router.post("/", add_users);
+router.post("/login", login);
+router.delete("/:id", deleteUsers);
 
-module.exports = router;
+export default router;

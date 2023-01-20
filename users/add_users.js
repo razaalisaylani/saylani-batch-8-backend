@@ -1,8 +1,8 @@
-const users = require("../constants/users");
-const Users = require("../models/User");
-const bcrypt = require("bcrypt");
-const Joi = require("joi");
-var jwt = require('jsonwebtoken');
+import users from "../constants/users.js";
+import Users from "../models/User.js";
+import bcrypt from "bcrypt";
+import Joi from "joi";
+import jwt from "jsonwebtoken";
 
 let count = users.length;
 
@@ -46,4 +46,4 @@ const addUsers = async (req, res) => {
   }
 };
 
-module.exports = addUsers;
+export default addUsers;

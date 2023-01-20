@@ -1,17 +1,18 @@
-const express = require("express");
-const mongoose = require("mongoose");
+import express from "express";
+import mongoose from "mongoose";
+import users from "./users/index.js"
+
 
 const app = express();
 
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://ghous:ghous@cluster0.pq7qght.mongodb.net/?retryWrites=true&w=majority")
+  .connect("")
   .then(() => console.log("Connected!"))
   .catch((err) => console.log("errr===>", err));
 
-app.use("/api/users", require("./users"));
-// app.use("/api/posts", require("./posts"));
+app.use("/api/users", users);
 
 app.use("/", (req, res) => {
   res.send(new Date());

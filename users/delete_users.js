@@ -1,4 +1,4 @@
-const users = require("../constants/users");
+import users from "../constants/users.js"
 
 const deleteUsers = (req, res) => {
   const { id } = req.params;
@@ -7,4 +7,4 @@ const deleteUsers = (req, res) => {
   res.status(200).send({ status: 200, message: "user deleted successfuly" });
 };
 
-module.exports = deleteUsers;
+export default deleteUsers;

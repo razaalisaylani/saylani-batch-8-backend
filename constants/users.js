@@ -1,3 +1,4 @@
+
 let users = [
   {
     id: 1,
@@ -19,4 +20,4 @@ let users = [
   },
 ];
 
-module.exports = users;
+export default users;
